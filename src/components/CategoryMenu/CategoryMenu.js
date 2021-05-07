@@ -1,5 +1,9 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-const CategoryMenu = () => (
+import { NavLink } from 'react-router-dom';
+
+const CategoryMenu = ({ openCategoryMenu, isOpenCategoryMenu }) => (
     <div className="category-section box-shadow">
         <div className="mobile-box">
             <ul>
@@ -12,13 +16,19 @@ const CategoryMenu = () => (
         <div className="category-section-item">
             <ul>
                 <li>
-                    <a href="category-page.html">
+                    <NavLink to="/category/men-fashion">
                         Men fashion{' '}
-                        <span className="category-toggle-icon">
+                        <span className="category-toggle-icon" onClick={openCategoryMenu}>
                             <i className="fas fa-chevron-down" />
                         </span>
-                    </a>
-                    <ul className="category-section-dropdown">
+                    </NavLink>
+                    <ul
+                        className={
+                            isOpenCategoryMenu
+                                ? 'category-section-dropdown show'
+                                : 'category-section-dropdown'
+                        }
+                    >
                         <li>
                             <a href="category-sub-page.html">Jackets & hoodies</a>
                         </li>
@@ -129,12 +139,12 @@ const CategoryMenu = () => (
                     </ul>
                 </li>
                 <li>
-                    <a href="category-page.html">
+                    <NavLink to="/category/women-fashion">
                         Women fashion{' '}
                         <span className="category-toggle-icon">
                             <i className="fas fa-chevron-down" />
                         </span>
-                    </a>
+                    </NavLink>
                     <ul className="category-section-dropdown">
                         <li>
                             <a href="category-sub-page.html">Saree</a>
@@ -262,12 +272,12 @@ const CategoryMenu = () => (
                     </ul>
                 </li>
                 <li>
-                    <a href="category-page.html">
+                    <NavLink to="/category/phones&tablets">
                         Phones & tablets{' '}
                         <span className="category-toggle-icon">
                             <i className="fas fa-chevron-down" />
                         </span>
-                    </a>
+                    </NavLink>
                     <ul className="category-section-dropdown">
                         <li>
                             <a href="category-sub-page.html">
@@ -361,12 +371,12 @@ const CategoryMenu = () => (
                     </ul>
                 </li>
                 <li>
-                    <a href="category-page.html">
+                    <NavLink to="/category/computer&accessories">
                         Computer & Accessories
                         <span className="category-toggle-icon">
                             <i className="fas fa-chevron-down" />
                         </span>
-                    </a>
+                    </NavLink>
                     <ul className="category-section-dropdown">
                         <li>
                             <a href="category-sub-page.html">
@@ -603,12 +613,12 @@ const CategoryMenu = () => (
                     </ul>
                 </li>
                 <li>
-                    <a href="category-page.html">
+                    <NavLink to="/category/electronic-accessories">
                         Electronic Accessories
                         <span className="category-toggle-icon">
                             <i className="fas fa-chevron-down" />
                         </span>
-                    </a>
+                    </NavLink>
                     <ul className="category-section-dropdown">
                         <li>
                             <a href="category-sub-page.html">
@@ -736,12 +746,12 @@ const CategoryMenu = () => (
                     </ul>
                 </li>
                 <li>
-                    <a href="category-page.html">
+                    <NavLink to="/category/home&living">
                         Home & Living
                         <span className="category-toggle-icon">
                             <i className="fas fa-chevron-down" />
                         </span>
-                    </a>
+                    </NavLink>
                     <ul className="category-section-dropdown">
                         <li>
                             <a href="category-sub-page.html">Plastics</a>
@@ -844,12 +854,12 @@ const CategoryMenu = () => (
                     </ul>
                 </li>
                 <li>
-                    <a href="category-page.html">
+                    <NavLink to="/category/health&beauty">
                         Health & Beauty
                         <span className="category-toggle-icon">
                             <i className="fas fa-chevron-down" />
                         </span>
-                    </a>
+                    </NavLink>
                     <ul className="category-section-dropdown">
                         <li>
                             <a href="category-sub-page.html">
@@ -977,12 +987,12 @@ const CategoryMenu = () => (
                     </ul>
                 </li>
                 <li>
-                    <a href="category-page.html">
+                    <NavLink to="/category/babies&toys">
                         Babies & Toys
                         <span className="category-toggle-icon">
                             <i className="fas fa-chevron-down" />
                         </span>
-                    </a>
+                    </NavLink>
                     <ul className="category-section-dropdown">
                         <li>
                             <a href="category-sub-page.html">Toys & Games</a>
@@ -1025,12 +1035,12 @@ const CategoryMenu = () => (
                     </ul>
                 </li>
                 <li>
-                    <a href="category-page.html">
+                    <NavLink to="/category/sports&outdoor">
                         Sports & Outdoor
                         <span className="category-toggle-icon">
                             <i className="fas fa-chevron-down" />
                         </span>
-                    </a>
+                    </NavLink>
                     <ul className="category-section-dropdown">
                         <li>
                             <a href="category-sub-page.html">
@@ -1060,12 +1070,12 @@ const CategoryMenu = () => (
                     </ul>
                 </li>
                 <li>
-                    <a href="category-page.html">
+                    <NavLink to="/category/automotive">
                         Automotive
                         <span className="category-toggle-icon">
                             <i className="fas fa-chevron-down" />
                         </span>
-                    </a>
+                    </NavLink>
                     <ul className="category-section-dropdown">
                         <li>
                             <a href="category-sub-page.html">Motor Cycle</a>

@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 const SingleGridItem = ({
     title,
     model,
@@ -7,6 +9,7 @@ const SingleGridItem = ({
     mainPrice,
     oldPrice,
     save,
+    id,
     emi = null,
     more = null,
 }) => {
@@ -29,10 +32,11 @@ const SingleGridItem = ({
             </div>
         );
     }
+    const link = `/product/${id}`;
     return (
         <div className="col-md-3 col-sm-3">
             <div className="box-item box-shadow">
-                <a href="product-details.html">
+                <NavLink to={link}>
                     <div className="box-item-figure">
                         <figure>
                             <img src={imagePath} alt="productImage" />
@@ -63,7 +67,7 @@ const SingleGridItem = ({
                         {EMIOPTION}
                         {ONEMOREOPTION}
                     </div>
-                </a>
+                </NavLink>
             </div>
         </div>
     );

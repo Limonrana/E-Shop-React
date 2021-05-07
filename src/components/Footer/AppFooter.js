@@ -1,3 +1,11 @@
+import delivery from '../../assets/images/cash-on-delivery.svg';
+import amex from '../../assets/images/cc-amex.svg';
+import dbbl from '../../assets/images/cc-dbbl.svg';
+import mastercard from '../../assets/images/cc-mastercard.svg';
+import visa from '../../assets/images/cc-visa.svg';
+import FooterLogo from '../../assets/images/logo-footer.png';
+import rocket from '../../assets/images/rocket.svg';
+
 const AppFooter = () => (
     <footer>
         <div className="container">
@@ -7,7 +15,7 @@ const AppFooter = () => (
                         <div className="footer-item">
                             <div className="footer-brand">
                                 <figure>
-                                    <img src="./images/logo-footer.png" alt="logoFooter" />
+                                    <img src={FooterLogo} alt="logoFooter" />
                                 </figure>
                             </div>
                             <div className="footer-details">
@@ -94,29 +102,26 @@ const AppFooter = () => (
                                         <img src="./images/bkash.svg" alt="paymentIcon" />
                                     </li> */}
                                     <li>
-                                        <img src="./images/rocket.svg" alt="paymentIcon" />
+                                        <img src={rocket} alt="paymentIcon" />
                                     </li>
                                     <li>
-                                        <img src="./images/cc-dbbl.svg" alt="paymentIcon" />
+                                        <img src={dbbl} alt="paymentIcon" />
                                     </li>
                                 </ul>
                                 <ul className="footer-list-img">
                                     <li>
-                                        <img src="./images/cc-visa.svg" alt="paymentIcon" />
+                                        <img src={visa} alt="paymentIcon" />
                                     </li>
                                     <li>
-                                        <img src="./images/cc-mastercard.svg" alt="paymentIcon" />
+                                        <img src={mastercard} alt="paymentIcon" />
                                     </li>
                                     <li>
-                                        <img src="./images/cc-amex.svg" alt="paymentIcon" />
+                                        <img src={amex} alt="paymentIcon" />
                                     </li>
                                 </ul>
                                 <ul className="footer-list-img">
                                     <li className="footer-list-img-big">
-                                        <img
-                                            src="./images/cash-on-delivery.svg"
-                                            alt="deliveryIcon"
-                                        />
+                                        <img src={delivery} alt="deliveryIcon" />
                                     </li>
                                 </ul>
                             </div>

@@ -53,6 +53,11 @@ button {
     width: 1230px;
   }
 }
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1230px;
+  }
+}
 @media only screen and (max-width: 1249px) {
   .container {
     width: 990px;
@@ -592,6 +597,9 @@ nav .container {
 }
 .mt-67 {
   margin-top: 67px;
+}
+.mt-85 {
+  margin-top: 85px;
 }
 @media only screen and (max-width: 767px) {
   .mt-67 {
@@ -1668,6 +1676,13 @@ footer {
   pointer-events: visible;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  z-index: 12;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.wrapper-close.active::-webkit-scrollbar {
+  display: none;
 }
 .authentication-modal {
   width: 100%;
@@ -1729,9 +1744,9 @@ footer {
 .social-login {
   height: 52px;
   background-color: #3b5997;
-  display: -webkit-inline-box;
+  /* display: -webkit-inline-box;
   display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-flex; */
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1791,8 +1806,8 @@ footer {
   font-weight: 400;
   margin-bottom: 6px;
   letter-spacing: 0.04em;
-  padding-left: 15px;
-  padding-right: 15px;
+  /* padding-left: 15px;
+  padding-right: 15px; */
 }
 .modal-input-box input {
   border-radius: 2px;
@@ -2585,7 +2600,7 @@ html.new-modal-open {
 .payment-additional-input label,
 .payment-invo-cp-input label {
   text-transform: uppercase;
-  padding-left: 15px;
+  /* padding-left: 15px; */
 }
 .payment-additional-input input,
 .payment-invo-cp-input input {
@@ -2651,9 +2666,6 @@ html.new-modal-open {
   padding: 10px 3px;
   font-size: 16px;
   font-weight: 400;
-}
-.payment-invo-cp {
-  display: none;
 }
 .payment-invo-cp.active {
   display: block;
@@ -3044,8 +3056,8 @@ html.new-modal-open {
   color: #555;
   margin-bottom: 6px;
   letter-spacing: 0.04em;
-  padding-left: 15px;
-  padding-right: 15px;
+  /* padding-left: 15px;
+  padding-right: 15px; */
 }
 .field-item-textarea textarea {
   height: auto;
@@ -3134,7 +3146,7 @@ html.new-modal-open {
 .field-receiver-input label {
   font-size: 13px;
   color: #555;
-  padding: 0 15px;
+  /* padding: 0 15px; */
 }
 .field-receiver-input input {
   height: 36px;
@@ -3651,7 +3663,7 @@ html.new-modal-open {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 11;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
@@ -3708,6 +3720,12 @@ html.new-modal-open {
   pointer-events: visible;
   -webkit-transition: all 86ms ease-out 172ms;
   transition: all 86ms ease-out 172ms;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.cart-modal.active::-webkit-scrollbar {
+  display: none;
 }
 @media only screen and (max-width: 767px) {
   .cart-modal {
@@ -4982,6 +5000,48 @@ html.new-modal-open {
   .service-fee {
     text-align: left;
   }
+}
+
+/* My Custom Css */
+figure.figure.hideImage {
+  display: none;
+}
+
+figure {
+  margin: 0 0 0px !important;
+}
+
+button.bg-transfarent {
+  background: transparent;
+  border: none;
+  padding: 0px;
+  color: #ffffff;
+}
+
+ul.category-section-dropdown.show {
+  display: block !important;
+  background: #f2f2f2;
+}
+
+.hideCustom {
+  display: none;
+}
+
+.field-item-main.field-label-active ~ .field-label label:before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #57c27b;
+  background: #fff;
+  border-radius: 2px;
+  padding-left: 2px;
+  line-height: 7px;
+  font-size: 18px;
+  color: #57c27b;
 }
 
 /* My Media Query CSS */

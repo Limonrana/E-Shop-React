@@ -1,30 +1,35 @@
 import React, { Component } from 'react';
 import { Col, Container, Row } from 'reactstrap';
-import Authentication from '../components/Auth/Authentication';
 import CategoryMenu from '../components/CategoryMenu/CategoryMenu';
-import AppFooter from '../components/Footer/AppFooter';
 import AppHeader from '../components/Header/AppHeader';
-import NavBar from '../components/Header/NavBar';
 import CategorySider from '../components/Home/CategorySlider/CategorySlider';
-import CartModal from '../components/Modal/CartModal';
-import DeliveryModal from '../components/Modal/DeliveryModal';
 import ProductGrid from '../components/Product/ProductGrid';
 
 class Home extends Component {
-    state = {};
+    state = {
+        isOpenCategoryMenu: false,
+    };
+
+    openCategoryMenu = () => {
+        const { isOpenCategoryMenu } = this.state;
+        this.setState({ isOpenCategoryMenu: !isOpenCategoryMenu });
+    };
 
     render() {
+        const { isOpenCategoryMenu } = this.state;
         return (
             <div className="App">
-                <NavBar />
                 <AppHeader />
-                <div className="main-section-abs" />
+                <div className="main-section-abs">{/* Category Menu Content For Mobile */}</div>
                 <section className="main-section">
                     <Container>
                         <div className="section-details">
                             <Row>
                                 <Col xs="3" sm="0" md="3" className="col-reponsive-hide">
-                                    <CategoryMenu />
+                                    <CategoryMenu
+                                        openCategoryMenu={this.openCategoryMenu}
+                                        isOpenCategoryMenu={isOpenCategoryMenu}
+                                    />
                                 </Col>
                                 <Col xs="9" sm="12" md="9" className="col-reponsive">
                                     <div className="category-full-content">
@@ -58,10 +63,6 @@ class Home extends Component {
                         </div>
                     </Container>
                 </section>
-                <AppFooter />
-                <Authentication />
-                <CartModal />
-                <DeliveryModal />
             </div>
         );
     }
